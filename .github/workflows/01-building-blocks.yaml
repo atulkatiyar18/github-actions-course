@@ -1,15 +1,14 @@
 name: 01 - Building Blocks
 on:
   push:
-	 branches:
-		 - main
+    branches:
+      - main
 
 jobs:
-	echo-hello:
-		runs-on: ubuntu-latest
-		steps:
-			- name: say hello
-			  run: echo "Hello, world"
+  echo-hello:
+    runs-on: ubuntu-latest
+
+
 
 
 
