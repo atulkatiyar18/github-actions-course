@@ -11,10 +11,12 @@ jobs:
     - name: Checkout code
       run: echo "Hello, World!"
   echo-goodbye:
-	  runs-on: ubuntu-latest
-	  steps:
-      - name: Failed stop
-		run: echo "I will fail"
+    runs-on: ubuntu-latest
+    steps:
+    - name: Failed stop
+      run: echo "I will fail"
+    - name: Say goodbye
+      run: echo "Worflow completed....."
 
 
 
