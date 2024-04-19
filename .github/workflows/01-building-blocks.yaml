@@ -7,10 +7,9 @@ on:
 jobs:
   echo-hello:
     runs-on: ubuntu-latest
-
-	steps:
-	- name: Checkout code
-	  run: echo "Hello, World!"
+    steps:
+    - name: Checkout code
+      run: echo "Hello, World!"
 
 
 
