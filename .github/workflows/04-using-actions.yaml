@@ -1,7 +1,7 @@
 name: 04 - Using Actions
 
 on:
-  push:
+  workflow_dispatch
     
 jobs:
   build:
@@ -21,3 +21,7 @@ jobs:
       - name: Install Dependencies
         working-directory: 04-using-actions/my-app
         run: npm ci
+
+      - name: Run Unit Tests
+        working-directory: 04-using-actions/my-app
+        run: npm run test
