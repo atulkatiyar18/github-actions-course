@@ -1,5 +1,5 @@
 name: 07 - Using Expressions
-run-name: 07 - Using Expressions | DEBUG - <'ON' if the debug input is true, 'OFF' otherwise>
+run-name: 07 - Using Expressions | DEBUG - ${{ inputs.debug && 'ON' || 'OFF' }}
 
 on:
   push:
@@ -9,6 +9,10 @@ on:
         description: "value"
         type: boolean
         default: false
+
+env:
+  my_var_assigment: ${{ vars.MY_VAR || 'default_value'}}
+  my_new_assigment: ${{ vars.MY_VAR_new || 'default_value'}}
 
 jobs:
   echo:
@@ -27,4 +31,7 @@ jobs:
         run: echo "I was triggered from main"
 
       - name: Greeting
-        run: echo "Hello, world"
+        run: |
+          echo "Hello, world"
+          echo "Repo varibale value present - ${{ env.my_var_assigment}}"
+          echo "Repo varibale value not present - ${{ env.my_new_assigment}}"
