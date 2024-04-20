@@ -8,7 +8,7 @@ on:
         description: "value for debug"
         type: boolean
         default: false
-  push:
+  #push:
 
 env:
   MY_WORKFLOW_VAR: 'workflow'
