@@ -1,11 +1,11 @@
 name: 09 - Using Functions
 
 on:
-  pull_request:
+  # pull_request:
   workflow_dispatch:
-  push:
-    branches:
-      - "main"
+  #push:
+    #branches:
+      #- "main"
 
 jobs:
   echo1:
