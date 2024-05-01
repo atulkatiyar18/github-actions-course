@@ -1,6 +1,7 @@
 name: 09 - Using Functions
 
 on:
+  pull_request:
   workflow_dispatch:
   push:
     branches:
@@ -25,7 +26,7 @@ jobs:
 
       - name: Bug step
         if: ${{ !cancelled() && contains(github.event.pull_request.title, 'fix')}}
-        run: echo ""
+        run: echo "I am a bug fix"
 
       - name: Sleep for 20 seconds
         run: |
