@@ -24,7 +24,7 @@ jobs:
             EOF
 
       - name: Bug step
-        if: ${{ !success() && contains(github.event.pull_request.title, 'fix', 'i')}}
+        if: ${{ !cancelled() && contains(github.event.pull_request.title, 'fix')}}
         run: echo ""
 
       - name: Sleep for 20 seconds
