@@ -26,6 +26,13 @@ jobs:
       
       - name: print status
         run: echo "printing status - ${{ steps.build.outputs.status }}"
+    
+  printing:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: printing
+        run: "printing status - ${{ needs.build.output.build-status }}"
   
   deploy:
     runs-on: ubuntu-latest
