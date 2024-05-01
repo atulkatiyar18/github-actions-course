@@ -8,6 +8,10 @@ on:
         description: "Skip deployment and only print build output"
         default: false
       target:
+        options:
+          - "prod"
+          - "staging"
+          - "uat"
         type: environment
         description: "Which environment the workflow will target"
         required: true
