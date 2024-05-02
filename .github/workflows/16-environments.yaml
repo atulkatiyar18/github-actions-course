@@ -1,5 +1,5 @@
-name: ${{ format('16 - Working with Environments | env - {0}', github.event.inputs.target-env) }}
-
+#name: ${{ format('16 - Working with Environments | env - {0}', github.event.inputs.target-env) }}
+name: 16 - Working with Environments
 on:
   workflow_dispatch:
     inputs:
