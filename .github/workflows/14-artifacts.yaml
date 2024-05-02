@@ -31,8 +31,14 @@ jobs:
         run: npm ci
       
       - name: Unit tests
-        run: npm run test
-      
+        run: npm run test -- --coverage
+
+      - name: upload test result
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-${{ github.sha }}
+          path: 14-artifacts/react-app/coverage
+
       - name: Build code
         run: npm run build
       
@@ -49,7 +55,7 @@ jobs:
       - name: Download build files
         uses: actions/download-artifact@v4
         with:
-          name: app
+          name: app-${{ github.sha }}
           path: build
       
       - name: show folder structure
