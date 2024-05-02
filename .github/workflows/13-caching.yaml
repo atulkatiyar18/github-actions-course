@@ -32,11 +32,11 @@ jobs:
           node-version: ${{ inputs.node-version }}
       
       - name: Download cached dependencies
+        uses: actions/cache@v3
         id: cache
         if: ${{ inputs.use-cache }}
-        uses: actions/cache@v3
         with:
-          path: 13-caching\react-app\node_modules
+          path: 13-caching/react-app/node_modules
           key: deps-node-modules-${{ hashFiles('13-caching/react-app/package-lock.json') }}
 
       - name: cache-status
